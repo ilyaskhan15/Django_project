@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> {{ mymembers.first_name }}  {{ mymembers.last_name }}</h1>
-    <p>Phone: {{mymembers.phone_number}}</p>
-    <p>Back to <a href="/tennis/members">Members</a></p>
-</body>
-</html>
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ mymembers.first_name }} {{ mymembers.last_name }}
+{% endblock %}
+
+
+{% block content %}
+  <h1>{{ mymembers.first_name }} {{ mymembers.last_name }}</h1>
+  
+  <p>Phone: {{ mymembers.phone_number }}</p>
+  <p>Member since: {{ mymembers.join_date }}</p>
+  
+  <p>Back to <a href="/tennis/members">Members</a></p>
+  
+{% endblock %}
